@@ -298,11 +298,20 @@ a {
 .titulo-donar {
     font-family: Arial, Helvetica, sans-serif;
     color:#0d3d47;
+    margin-bottom: 5%;
 }
-
+.select {
+  
+  margin-bottom: 2%;
+  height: 30px;
+  border: #368979 solid 2px;
+  width: 100%;
+}
 .radio-donar { 
-    display: flex;
-    margin: 3%;   
+   display: grid;
+   grid-template-columns: 10%  90%;
+    margin: 3%; 
+    color:#0d3d47;  
 }
 
 form {
@@ -318,6 +327,8 @@ label {
     margin-top: 1%;;
 }
 
+
+
 input { 
     display: block;
     color: #0d3d47;
@@ -325,9 +336,46 @@ input {
     margin-bottom: 1%;
 }
 
-.btn-form {
-  margin: 10% 35% 5% 35%;
+#btn-form {
+  width: 40%;
+  margin-top: 2%; 
 }
+.divBoton {
+  display: flex;
+  justify-content: center;
+}
+
+/* ------------responsive donaciones------------------------ */
+
+@media screen and (min-width: 768px) {
+.select {
+  width: 100%;
+}
+  
+}
+@media screen and (min-width: 1024px) {
+.seccionOpciones{
+  display: grid;
+  grid-template-columns: 20% 80%;
+ align-items: center;
+ margin: 1% 0 1% 0;
+}
+.radio-donar {
+margin: 5%;
+}
+.imagenDonaciones {
+height: 200px;
+overflow: hidden;
+display: flex;
+align-items: centrar;
+
+}
+.inicio-donar{
+  font-size:x-large;
+}
+}
+
+
 
 /*--------------- productos.html -----------------------*/
 
