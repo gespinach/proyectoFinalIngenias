@@ -376,6 +376,10 @@ input {
 .select {
   width: 100%;
 }
+#btn-form {
+  width: 15%;
+  margin-top: 2%; 
+}
   
 }
 @media screen and (min-width: 1024px) {
@@ -397,6 +401,11 @@ align-items: centrar;
 }
 .inicio-donar{
   font-size:x-large;
+}
+
+#btn-form {
+  width: 10%;
+  margin-top: 2%; 
 }
 }
 
