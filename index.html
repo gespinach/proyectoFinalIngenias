@@ -7,16 +7,26 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <section class="seccionPrincipal">
     <header>
       
         <div class="divLogo">
           <img src="imagenes/logoBlanco.png" alt="Logo" class="imagenTamañoLogo">
         </div>
 
+        <nav class="menu" id="menuPantallaGrande">
+      
+            <a href="paginas/catalogo.html">CATÁLOGO</a>
+        <a href="paginas/novedades.html">NOVEDADES</a>
+        <a href="paginas/donaciones.html">DONAR</a>
+        <a href="paginas/productos.html">PRODUCTOS</a>
+  
+        </nav>
+
         <div class="divAccesos">
           <a href="index.html"><img src="imagenes/home.png" alt="Inicio" class="imagenTamañoIcono"></a>
           <img onclick="login()" src="imagenes/iconoLogin.png" alt="Ingresar" class="imagenTamañoIcono">
-          <img src="imagenes/menuBlanco.png" alt="Menu" class="imagenTamañoIcono">
+          <img src="imagenes/menuBlanco.png" alt="Menu" class="imagenTamañoIcono" id="menuHamburguesa">
         </div>
 
 
@@ -25,7 +35,7 @@
     
 
     <main>
-      <nav class="menu">
+      <nav class="menu" id="menuPantallaChica">
       
         <a href="paginas/catalogo.html">CATÁLOGO</a>
         <a href="paginas/novedades.html">NOVEDADES</a>
@@ -40,7 +50,7 @@
 
       <div class="divLibroDelDia">
         <p class="libroDeHoy">Libro del día: Cien Años de Soledad</p>
-        <img src="imagenes/flechaAbajo.png" alt="Mas Detalles" class="imagenTamañoIcono" id="botonDetalleLibroDelDia"> 
+        <img src="imagenes/flechaAbajo.png" alt="Mas Detalles" class="imagenTamañoIcono" id="botonDetalleLibroDelDia" onclick="masDetalle()"> 
       </div>
      <div id="divDetalleLibroDelDia">
       <div class="pDescripcion">
@@ -106,6 +116,7 @@
         
     </div> 
     </footer>
+  </section>
   <script src="script.js"></script>  <script src="script.js"></script>
   </body>
 </html>
