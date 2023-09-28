@@ -2,11 +2,21 @@
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
 }
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  color:#FDC96F;
+}
+
 
 /*ENCABEZADO DE TODAS LAS PAGINAS*/
 .imagenTamañoLogo {
-  width: 90%;
+  width: 60%;
 }
 .imagenTamañoIcono {
   width: 25px;
@@ -155,6 +165,11 @@ a {
 
 /* RESPONSIVE */
 @media screen and (min-width: 768px) {
+  /*agrego tamaño letra (barb)*/
+  * {
+    font-size: medium;
+  }
+
   .imagenTamañoIcono {
     width: 40px;
   }
@@ -219,6 +234,10 @@ a {
 @media screen and (min-width: 1024px) {
   /*PARA LA PAGINA PRINCIPAL*/
 
+  /*agrego tamaño letra (barb)*/
+  * {
+  font-size: large;
+  }
   header {
     grid-template-columns: 4fr 1fr;
   }
@@ -368,7 +387,7 @@ input {
 margin: 5%;
 }
 .imagenDonaciones {
-height: 200px;
+height: 250px;
 overflow: hidden;
 display: flex;
 align-items: centrar;
