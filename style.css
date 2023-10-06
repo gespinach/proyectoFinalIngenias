@@ -43,9 +43,190 @@ Header {
   justify-content: space-evenly;
   align-items: center;
 }
+
 body {
   background-color: #0d3d47;
   overflow-y: scroll;
+}
+
+/*----------------LOGIN-------------------*/
+.divAccesos button {
+  cursor: pointer;
+  background-color: #0d3d47;
+  border: none;
+}
+
+.modal {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.25);
+  width: 600px;
+  height: 500px;
+  padding: 20px 30px;
+  background: #fff;
+  box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
+  border-radius: 10px;
+  transition: top 0ms ease-in-out 200ms,
+              opacity 200ms ease-in-out 0ms,
+              transform 200ms ease-in-out 0ms;
+}
+
+.modal.active  {
+  top: 50%;
+  z-index: 1;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition: top 0ms ease-in-out 0ms,
+              opacity 200ms ease-in-out 0ms,
+              transform  200ms ease-in-out 0ms;
+}
+
+.modal .btn-cerrar  {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  background: #888;
+  color: #eee;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.modal h2 {
+  text-align: center;
+  color: #222;
+  margin: 20px 0px 30px;
+  font-size: 45px;
+}
+
+.modal .form-login .contenido-form {
+  margin: 15px 0px;
+}
+
+.modal .form-login .contenido-form label{
+  font-size: 30px;
+  padding-top: 15px;
+  color: #222;
+}
+
+.modal .form-login .contenido-form input[type="text"],
+.modal .form-login .contenido-form input[type="password"] {
+  margin-top: 10px;
+  display: block;
+  width: 95%;
+  padding: 15px;
+  outline: none;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.modal .form-login .contenido-form .btn-ingresar {
+  width: 100%;
+  height: 60px;
+  margin-top: 30px;
+  border: none;
+  outline: none;
+  font-size: 30px;
+  background: #0d3d47;
+  color: #f5f5f5;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.modal .form-login .contenido-form .btn-ingresar:active {
+  transform: scale(0.97);
+}
+
+.modal .form-login .contenido-form a {
+  display: block;
+  margin-left: 5px;
+  font-size: 30px;
+  color: #1a79ca;
+  text-decoration: none;
+}
+
+.modal .form-login .contenido-form p {
+  display: flex;
+  text-align: left;
+  margin-top: 30px;
+  font-size: 30px;
+}
+
+/*-------------------------REGISTRO------------------------*/
+
+.sec-registro {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.sec-registro h1 {
+  font-size: 3em;
+}
+
+.sec-registro h2 {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 1em;
+  font-size: 2.5em;
+  color: #ffffff;
+}
+
+.sec-registro form {
+  padding: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 500px;
+  border-radius: 20px;
+  border: 2px solid rgba(0,0,0,.1);
+  background-color: #afcfce;
+}
+
+.sec-registro form label {
+  width: 100%;
+  font-size: 25px;
+  padding: 0.2em;
+  margin-bottom: 0.5em;
+}
+
+.sec-registro form input {
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 0.8em;
+  border-radius: 9px;
+  border: none;
+}
+
+.sec-registro form input[type='submit'] {
+  background: #0d3d47;
+  margin-top: 10px;
+  font-size: 25px;
+  color: #f5f5f5;
+}
+
+.sec-registro form input[type='submit']:active {
+  transform: scale(0.97);
+}
+
+.sec-registro form p {
+  margin-top: 5px;
+  font-size: 25px;
+}
+
+.sec-registro form p a {
+  text-decoration: none;
+  font-size: 25px;
+  color: #003DFF;
 }
 
 /*PAGINA PRINCIPAL*/
@@ -328,7 +509,7 @@ a {
 }
 
   /*---------------------PAGINA DE DONACIONES-----------------------*/
-  .donacion {
+.donacion {
     width: 100%;
 }
 
@@ -340,50 +521,50 @@ a {
 }
 
 .titulo-donar {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;  
     color:#0d3d47;
     margin-bottom: 5%;
 }
+
 .select {
-  
   margin-bottom: 2%;
   height: 30px;
   border: #368979 solid 2px;
   width: 100%;
 }
+
 .radio-donar { 
-   display: grid;
-   grid-template-columns: 10%  90%;
-    margin: 3%; 
-    color:#0d3d47;  
+  display: grid;
+  grid-template-columns: 10%  90%;
+  margin: 5%; 
+  color:#0d3d47;  
 }
 
-form {
-    margin: 0 5% 15% 5%;
-    padding: 5%;
-    border-radius: 5px;
-    background-color: #afcfce;
-    font-family: Arial, Helvetica, sans-serif;
-}
+/*form {
+  margin: 0 5% 15% 5%;
+  padding: 5%;
+  border-radius: 5px;
+  background-color: #afcfce;
+  font-family: Arial, Helvetica, sans-serif;
+}*/
 
 label {
-    display: block;
-    margin-top: 1%;;
+  display: block;
+  margin-top: 1%;
 }
 
-
-
-input { 
-    display: block;
-    color: #0d3d47;
-    padding: 2%;
-    margin-bottom: 1%;
+input {
+ display: block;
+ color: #0d3d47;
+ padding: 2%;
+ margin-bottom: 1%;
 }
 
 #btn-form {
   width: 40%;
   margin-top: 2%; 
 }
+
 .divBoton {
   display: flex;
   justify-content: center;
@@ -422,7 +603,7 @@ align-items: centrar;
   font-size:x-large;
 }
 
-#btn-form {
+.centrarBuscar input {
   width: 10%;
   margin-top: 2%; 
 }
@@ -644,7 +825,7 @@ align-items: centrar;
   color: white;
   border-style:solid;
   border-color:#368979;
-background-color: #368979;
+  background-color: #368979;
  
 }
 .centrarBuscar{
@@ -659,6 +840,11 @@ background-color: #368979;
   
   .formBuscar {
     padding: 10px;
+    margin: 0 5% 15% 5%;
+    padding: 5%;
+    border-radius: 5px;
+    background-color: #afcfce;
+    font-family: Arial, Helvetica, sans-serif;
   }
   
   .botonBuscar {
@@ -668,6 +854,7 @@ background-color: #368979;
     height: 30px;
     border-style:solid;
     border-color:#368979;
+    
   } 
   .formBusqueda {
   grid-template-columns: repeat(2, 1fr);
@@ -681,3 +868,5 @@ background-color: #368979;
    
   }
 }
+
+

@@ -8,30 +8,39 @@
   </head>
   <body>
     <header>
-      
         <div class="divLogo">
           <img src="imagenes/logoBlanco.png" alt="Logo" class="imagenTamañoLogo">
         </div>
 
         <div class="divAccesos">
           <a href="index.html"><img src="imagenes/home.png" alt="Inicio" class="imagenTamañoIcono"></a>
-          <img onclick="login()" src="imagenes/iconoLogin.png" alt="Ingresar" class="imagenTamañoIcono">
+          <button id="mostrar-login">
+            <img src="../imagenes/iconoLogin.png" alt="login" class="imagenTamañoIcono">
+          </button>
           <img src="imagenes/menuBlanco.png" alt="Menu" class="imagenTamañoIcono">
         </div>
-
-
+        <div class="modal">
+          <div class="btn-cerrar">&times;</div>
+          <h2>Iniciar Sesion</h2>
+          <form class="form-login"  id="login">
+            <div class="contenido-form">
+              <label for="email">Email</label>
+              <input type="text" id="email">
+              <label for="password">Contraseña</label>
+              <input type="password" id="password">
+              <input type="submit" class="btn-ingresar" value="Ingresar">
+              <p>No tenes cuenta? <a href="../paginas/registro.html">Registrate</a></p>
+            </div>
+          </form>
+        </div>
     </header>
-   
-    
-
+  
     <main>
       <nav class="menu">
-      
         <a href="paginas/catalogo.html">CATÁLOGO</a>
         <a href="paginas/novedades.html">NOVEDADES</a>
         <a href="paginas/donaciones.html">DONAR</a>
         <a href="paginas/productos.html">PRODUCTOS</a>
-
       </nav>
 
       <div class="banner">
@@ -58,20 +67,18 @@
       </div>
 
       <div class="grid">
-      <div class="separador"></div>
-      <section class="sectionImagenes">
-      <div class="divImagenEdificio">
-          
+        <div class="separador"></div>
+        <section class="sectionImagenes">
+          <div class="divImagenEdificio">
             <img src="imagenes/biblioteca01.jpg" alt="edificio" class="imagen">
             <img src="imagenes/biblioteca02.jpg" alt="edificio" class="imagen">
             <img src="imagenes/biblioteca03.jpg" alt="edificio" class="imagen">
             <img src="imagenes/biblioteca04.jpeg" alt="edificio" class="imagen">
-          
+          </div>
+        </section>
+        <div class="separador"></div>
       </div>
-    </section>
-    <div class="separador"></div>
-  </div>
-       <div class="divDescripcion">
+      <div class="divDescripcion">
          <P class="pDescripcion">
           La biblioteca también es un espacio ideal para estudiar, investigar o simplemente sumergirte en un mundo literario único. Nuestra zona de lectura ofrece un ambiente tranquilo y propicio para la concentración y la reflexión.
           Explora, aprende y descubre en la biblioteca. ¡Te esperamos con los brazos abiertos!
@@ -79,7 +86,7 @@
          <h3>
             "La lectura es un viaje sin fronteras, y nuestra biblioteca es tu puerta de entrada a ese universo infinito"
          </h3>
-        </div>
+      </div>
     </main>
 
     <footer>
@@ -106,6 +113,7 @@
         
     </div> 
     </footer>
-  <script src="script.js"></script>  <script src="script.js"></script>
+  <script src="script.js"></script>
+  <script src="login.js"></script>
   </body>
 </html>
