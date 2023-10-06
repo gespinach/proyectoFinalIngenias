@@ -325,6 +325,32 @@ a {
     width: 400px;
     height: 350px;
   }
+  img.noticia {
+    display: block; /*Cambia la imagen a un elemento de bloque */
+    margin: 0 auto; /*Centra la imagen horizontalmente dentro del párrafo */
+  }
+
+}
+
+
+@media screen and (min-width: 1440px) {
+  .divNovedades {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+  }
+  .noticia{
+    width: 300px;
+    height: 200px;
+    padding-top: 20px;
+  }
+  .pNovedades{
+    padding-bottom: 20px;
+  }
+  img.noticia {
+    display: block; /* Cambia la imagen a un elemento de bloque */
+    margin: 0 auto; /* Centra la imagen horizontalmente dentro del párrafo */
+  }
+
 }
 
   /*---------------------PAGINA DE DONACIONES-----------------------*/
