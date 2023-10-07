@@ -8,10 +8,10 @@
   </head>
   <body>
     <header>
-      
         <div class="divLogo">
           <img src="../imagenes/logoBlanco.png" alt="Logo" class="imagenTamañoLogo">
         </div>
+
         <nav class="menu" id="menuPantallaGrande">
       
           <a href="catalogo.html">CATÁLOGO</a>
@@ -21,14 +21,13 @@
     
           </nav>
 
+
         <div class="divAccesos">
           <a href="../index.html"><img src="../imagenes/home.png" alt="Inicio" class="imagenTamañoIcono"></a>
-          <img onclick="login()" src="../imagenes/iconoLogin.png" alt="Ingresar" class="imagenTamañoIcono">
           <img src="../imagenes/menuBlanco.png" alt="Menu" class="imagenTamañoIcono">
         </div>
-
-
     </header>
+
     <main>
       <nav class="menu" id="menuPantallaChica">
         <a href="catalogo.html">CATÁLOGO</a>
@@ -37,95 +36,90 @@
         <a href="productos.html">PRODUCTOS</a>
       </nav>
 
+
       <div class="banner bannerNoMobile">
         <img src="../imagenes/biblioteca.jpg" alt="Biblioteca" class="imagenTamañoBanner">
       </div>
      
+
     </main>
+
     <div class="imagenDonaciones">
-    <img class="donacion" src="../imagenes/donaciones01.jpg" alt="donar">
-  </div>
+      <img class="donacion" src="../imagenes/Portada_Donaciones.png" alt="donar">
+    </div>
     <div class="inicio-donar">
         <p>Acá podes donar o intercambiar tus libros, para ello deberás completar el siguiente formulario:</p>
     </div> 
     <form class="formBuscar">
-      
       <section class="seccionOpciones">
-        <!-- <div class="titulo-donar"><h3>Elegí una opción</h3></div> -->
         <article>
           <div class="radio-donar"><input type="radio" name="opcion" value="donar" />Donar</div>
           <div class="radio-donar"><input type="radio" name="opcion" value="intercambiar" />Intercambiar</div>
-           </article>
+        </article>
       </section>
  
       <section class="formBusqueda">
-      
-         <article>
-        <label for="titulo">Título:</label>
-        <input type="text" name="titulo" />
+        <article class="contenido-form-donar">
+          <label for="titulo">Título:</label>
+          <input type="text" name="titulo" />
         </article>
 
-        <article>
-        <label for="autor">Autor:</label>
-        <input type="text" name="autor" />
-      </article>
+        <article class="contenido-form-donar">
+          <label for="autor">Autor:</label>
+          <input type="text" name="autor" />
+        </article>
 
-      <article>
-        <label for="estado" id="estado">Estado:</label>
-        <select name="estado" class="select">
+        <article class="contenido-form-donar">
+          <label for="estado" id="estado">Estado:</label>
+          <select name="estado" class="select">
             <option value="1">Seleccionar</option>
             <option value="2">Nuevo</option>
             <option value="3">Usado</option>
-        </select>
-      </article>
+          </select>
+        </article>
 
-      <article>
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" />
-      </article>
+        <article class="contenido-form-donar">
+          <label for="nombre">Nombre:</label>
+          <input type="text" name="nombre" />
+        </article>
 
-        <article>
-        <label for="apellido">Apellido:</label>
-        <input type="text" name="apellido" />
-      </article>
+        <article class="contenido-form-donar">
+          <label for="apellido">Apellido:</label>
+          <input type="text" name="apellido" />
+        </article>
 
-        <article>
-        <label for="telefono">Teléfono:</label>
-        <input type="text" name="telefono" />
-      </article>
-        </section>
-        <div class="centrarBuscar">
-        <input class="botonBuscar" id="btn-form"type="button" value="ACEPTAR"/>
-        </div>
+        <article class="contenido-form-donar">
+          <label for="telefono">Teléfono:</label>
+          <input type="text" name="telefono" />
+        </article>
+      </section>
+        
+      <div class="centrarBuscar">
+        <input class="botonBuscar" id="btn-form" type="button" value="ACEPTAR"/>
+      </div>
     </form>
   
-
-
-
     <footer>
     <div class="datos">
       <div class="footer">
         <p>Horario de atención: 9:00hs a 19:00hs</p>
         <p>ElLibroFeliz@gmail.com</p>
         <p>+29873542</p>
-     </div>
+      </div>
 
-     <div class="redes">
-        
+      <div class="redes">
         <a href="https://es-la.facebook.com/"><img src="../imagenes/logoFacebook.png" alt="Facebook" class="imagenTamañoIcono"></a>
         <a href="https://www.instagram.com/?hl=es-la"><img src="../imagenes/logoInstagram.png" alt="Facebook" class="imagenTamañoIcono"></a>
         <a href="https://twitter.com/i/flow/login?redirect_after_login=%2F%3Flang%3Des"><img src="../imagenes/logoTwiter.png" alt="Facebook" class="imagenTamañoIcono"></a>
-
-        
       </div>
+
       <p class="domicilio">Rivadavia 356 - Paraná - Entre Ríos</p>
       </div>
 
       <div class="divMapa">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6787.043515198948!2d-60.536610904056744!3d-31.728956493244684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b4527c878cbec3%3A0x1b85424521f24011!2sBiblioteca%20Popular%20del%20Paran%C3%A1!5e0!3m2!1ses-419!2sar!4v1690414692688!5m2!1ses-419!2sar" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        
-    </div> 
+      </div> 
     </footer>
-  <script src="../script.js"></script>
+    <script src="../script.js"></script>
   </body>
 </html>
