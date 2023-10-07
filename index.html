@@ -7,17 +7,31 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <section class="seccionPrincipal">
     <header>
         <div class="divLogo">
           <img src="imagenes/logoBlanco.png" alt="Logo" class="imagenTamañoLogo">
         </div>
 
+        <nav class="menu" id="menuPantallaGrande">
+      
+            <a href="paginas/catalogo.html">CATÁLOGO</a>
+        <a href="paginas/novedades.html">NOVEDADES</a>
+        <a href="paginas/donaciones.html">DONAR</a>
+        <a href="paginas/productos.html">PRODUCTOS</a>
+  
+        </nav>
+
         <div class="divAccesos">
           <a href="index.html"><img src="imagenes/home.png" alt="Inicio" class="imagenTamañoIcono"></a>
+
           <button id="mostrar-login">
             <img src="../imagenes/iconoLogin.png" alt="login" class="imagenTamañoIcono">
           </button>
-          <img src="imagenes/menuBlanco.png" alt="Menu" class="imagenTamañoIcono">
+
+
+          <img src="imagenes/menuBlanco.png" alt="Menu" class="imagenTamañoIcono" id="menuHamburguesa">
+
         </div>
         <div class="modal">
           <div class="btn-cerrar">&times;</div>
@@ -36,7 +50,11 @@
     </header>
   
     <main>
-      <nav class="menu">
+
+
+      <nav class="menu" id="menuPantallaChica">
+      
+
         <a href="paginas/catalogo.html">CATÁLOGO</a>
         <a href="paginas/novedades.html">NOVEDADES</a>
         <a href="paginas/donaciones.html">DONAR</a>
@@ -49,7 +67,7 @@
 
       <div class="divLibroDelDia">
         <p class="libroDeHoy">Libro del día: Cien Años de Soledad</p>
-        <img src="imagenes/flechaAbajo.png" alt="Mas Detalles" class="imagenTamañoIcono" id="botonDetalleLibroDelDia"> 
+        <img src="imagenes/flechaAbajo.png" alt="Mas Detalles" class="imagenTamañoIcono" id="botonDetalleLibroDelDia" onclick="masDetalle()"> 
       </div>
      <div id="divDetalleLibroDelDia">
       <div class="pDescripcion">
@@ -113,7 +131,12 @@
         
     </div> 
     </footer>
+
   <script src="script.js"></script>
   <script src="login.js"></script>
+
+  </section>
+
+
   </body>
 </html>
