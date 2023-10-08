@@ -45,7 +45,7 @@ fetch('/datos/ejemplo.csv')
     let lineas = contenido.split(/\n/);
     lineas.forEach(linea => { 
       linea = linea.trim();
-      linea = linea.split(";");
+      linea = linea.split(",");
       if (linea.length ==4){
        if(numlinea !=0){
         let nuevoProducto = new Producto(linea[0],linea[1],linea[2],linea[3]);
