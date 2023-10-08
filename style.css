@@ -681,6 +681,97 @@ align-items: centrar;
   padding: 4% 10% 4% 10%;
 }
 
+
+.ulListaDeCarrito{
+  display: grid;
+  grid-template-columns: 1fr;
+
+}
+
+.divCantidadBotones{
+  display: flex;
+}
+.articleCarrito{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+  align-items:center;
+}
+.articleCarrito img{
+  width: 75%;
+}
+.classCarritoCantidadItem {
+  min-width: 50%;
+  display: flex;
+  align-items: center;
+ justify-content: center;
+}
+.classCarritoSubtotalItem{
+  text-align: right;
+  padding-right: 20px;
+}
+
+.botonCantidad {
+  height: 50%;
+  width: 20%;
+  text-align: center;
+}
+.total{
+  display: flex;
+  justify-content: end;
+  padding: 2%;
+  padding-right: 20px;
+  border-top: #0d3d47 dotted 1px;
+  align-items: center;
+  
+}
+.totalAPagar{
+  font-size: 1.5rem;
+  margin-left: 5%;
+}
+.tituloCarrito{
+  font-size: 1.5rem;
+  text-align: center;
+}
+#carritoModal::backdrop{
+  background-color: rgba(0,0,0,0.55);
+}
+#carritoModal{
+  
+  max-width: 100%;
+  margin: 2%;
+ margin-top: 10%;
+ border-radius: 3%;
+ border: #0d3d47 solid 1px;
+}
+
+ .botonCerrar{
+  width: 20px;
+  height: 20px;
+  color: #368979;
+  font-size: 18px;
+  font-weight: bold;
+text-align: center;
+border-radius: 10%;
+margin: 8px 15px 8px 0px;
+border: 2px solid  #368979;
+ }
+ .divCerrar{
+  display: flex;
+  justify-content: right;
+  border-bottom: #0d3d47 dotted 1px;
+ }
+
+ #cantidadCarrito{
+
+  border-radius: 100%;
+  color: #368979;
+border-style: none;
+ }
+ 
+
+
+
+
 /*------------- Responsive productos.html -------------*/
 @media screen and (min-width: 768px) {
   .pNovedadesProductos {
