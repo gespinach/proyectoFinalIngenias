@@ -10,7 +10,8 @@ let acumuladoEnCarrito = document.getElementById("cantidadCarrito");
 //-----------condiciones iniciales-------------------------------
 
 if (carrito.length ==0){
-  acumuladoEnCarrito.style.display = "none"
+  acumuladoEnCarrito.style.display = "none";
+  acumuladoEnCarrito.value = 0;
 }
 else {
   acumuladoEnCarrito.style.display = "block";
@@ -93,8 +94,17 @@ function activarBoton(boton){
 
  boton.addEventListener("click", function(event){
  event.preventDefault();
+agregarACarrito(boton.id);
+boton.value="Agregado";
+boton.style.backgroundColor = "#0d3d47";
+ })
+}
+
+ //-------------------------------------------------------------------------------
+
+ function agregarACarrito(codigo){
  let productoElegido = new Producto
- productoElegido = productos.find((producto) => producto.codigo === boton.id)
+ productoElegido = productos.find((producto) => producto.codigo === codigo)
  let itemElegido = carrito.find((item)=> item.producto === productoElegido)
  let i = carrito.indexOf(itemElegido);
  console.log(i);
@@ -102,13 +112,13 @@ function activarBoton(boton){
  let nuevoItemCarrito = new ItemCarrito(productoElegido, 1);
  carrito.push(nuevoItemCarrito);
  } else{
-  itemElegido.cantidad = itemElegido.cantidad +1;
+  carrito[i].cantidad = itemElegido.cantidad +1;
 
  }
 calcularAcumuladoEnCarrito();
- console.log(acumuladoEnCarrito);
- })
-}
+
+ }
+
 
 
 //----------------------------------------------------------------------
@@ -119,8 +129,11 @@ let iconoCarrito = document.getElementById("iconoCarrito");
  
 iconoCarrito.addEventListener("click", function (event){
 event.preventDefault();
-if(acumuladoEnCarrito==0){
-  document.getElementById("carritoVacio").showModal();
+if(carrito.length==0){
+  let mensajeVacio = document.getElementById("mensajeCarritoVacio");
+  mensajeVacio.innerText = "Carrito Vacío";
+  setTimeout(function(){mensajeVacio.innerText=""}, 1000);
+  // document.getElementById("carritoVacio").showModal();
 }else{
 crearVentanaCarrito();
 }
@@ -159,6 +172,7 @@ let item = carrito[i];
 console.log(carrito[i]);
 let articulo = document.createElement("article");
 articulo.classList.add("articleCarrito");
+articulo.id = item.producto.codigo;
 let imagen = document.createElement("img");
 console.log(item.producto.imagen);
 imagen.src = item.producto.imagen ;
@@ -174,7 +188,9 @@ mas.id = "mas";
 mas.classList.add("botonCantidad");
 mas.classList.add("mas");
 mas.value = "+";
+mas.name = item.producto.codigo;
 let cantidad = document.createElement("p");
+cantidad.id = item.producto.codigo;
 cantidad.classList.add("classCarritoCantidadItem");
 cantidad.innerText = item.cantidad;
 let menos = document.createElement("input");
@@ -183,6 +199,7 @@ menos.id = "menos";
 menos.classList.add("botonCantidad");
 menos.classList.add("menos");
 menos.value = "-";
+menos.name = item.producto.codigo;
 let subtotal = document.createElement("p");
 subtotal.classList.add("classCarritoSubtotalItem");
 let subtotalAPagar = item.cantidad * parseFloat(item.producto.precio.substring(1));
@@ -200,7 +217,8 @@ articulo.appendChild(subtotal);
 divParaRemover.appendChild(articulo);
 
 totalAPagar = totalAPagar + subtotalAPagar;
-
+activarBotonMas(mas);
+activarBotonMenos(menos);
 }
 
 document.getElementById("importeTotal").innerText = "$" + totalAPagar;
@@ -228,4 +246,59 @@ acumuladoEnCarrito.style.display = "block";
 
 }
 
+//------------------------------------------------------------------------
+function activarBotonMas(botonMas){
+botonMas.addEventListener("click", function(event){
+  agregarACarrito(event.target.name);
 
+let cant = parseInt(botonMas.parentElement.children[1].innerText);
+botonMas.parentElement.children[1].innerText = cant +1;
+let itemCarrito = carrito.find((item)=> item.producto.codigo == event.target.name)
+botonMas.parentElement.parentElement.children[4].innerText= itemCarrito.cantidad * parseFloat(itemCarrito.producto.precio.substring(1));
+actualizarTotal();
+})
+}
+
+//-----------------------------------------------------------------------------
+function activarBotonMenos(botonMenos){
+  botonMenos.addEventListener("click", function(event){
+
+  let cant = parseInt(botonMenos.parentElement.children[1].innerText);  
+    if(cant>1){
+    quitarDeCarrito(event.target.name);
+  
+  
+  botonMenos.parentElement.children[1].innerText = cant -1;
+  let itemCarrito = carrito.find((item)=> item.producto.codigo == event.target.name)
+  botonMenos.parentElement.parentElement.children[4].innerText= itemCarrito.cantidad * parseFloat(itemCarrito.producto.precio.substring(1));
+  actualizarTotal();
+    }
+  })
+  }
+
+//----------------------------------------------------------------------------
+
+function quitarDeCarrito(codigo){
+
+  let productoElegido = new Producto
+  productoElegido = productos.find((producto) => producto.codigo === codigo)
+  let itemElegido = carrito.find((item)=> item.producto === productoElegido)
+  let i = carrito.indexOf(itemElegido);
+  carrito[i].cantidad = carrito[i].cantidad -1;
+   
+ calcularAcumuladoEnCarrito();
+
+}
+
+
+
+//------------------------------------------------------------------------------
+
+function actualizarTotal(){
+let total = 0;
+for(let i =0; i<carrito.length;i++){
+  total = total + carrito[i].cantidad * parseFloat(carrito[i].producto.precio.substring(1));
+}
+document.getElementById("importeTotal").innerText = "$" + total;
+
+}
