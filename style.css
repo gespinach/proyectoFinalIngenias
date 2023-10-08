@@ -682,6 +682,8 @@ align-items: centrar;
 }
 
 
+
+
 .ulListaDeCarrito{
   display: grid;
   grid-template-columns: 1fr;
@@ -740,8 +742,15 @@ align-items: centrar;
   max-width: 100%;
   margin: 2%;
  margin-top: 10%;
- border-radius: 3%;
+ border-radius: 1%;
  border: #0d3d47 solid 1px;
+}
+
+.botonConfirmarCompra{
+  border: none;
+  background-color: #368979;
+  color: white;
+  border-radius: 5%;
 }
 
  .botonCerrar{
@@ -768,6 +777,15 @@ border: 2px solid  #368979;
 border-style: none;
  }
  
+#mensajeCarritoVacio{
+position:absolute;
+top: 1%;
+right:18%;
+color: whitesmoke;
+text-align: center;
+
+}
+
 
 
 
@@ -781,6 +799,18 @@ border-style: none;
   .listaProductos {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  #carritoModal{
+    max-width: 70%;
+    margin: 15%;
+  }
+  .totalAPagar{
+    font-size: 1rem;
+    margin-left: 5%;
+  }
+  #mensajeCarritoVacio{
+    right:12%; 
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -802,6 +832,21 @@ border-style: none;
   .botonComprar {
     font-size: large;
   }
+  #carritoModal{
+    max-width: 50%;
+    margin: 25%;
+  }
+  #mensajeCarritoVacio{
+    top:30px; 
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+  #mensajeCarritoVacio{
+    top:60px;
+    right: 13% ; 
+  }  
 }
 
 /*-------------Acá arranca la prueba----------*/
