@@ -39,7 +39,7 @@ class ItemCarrito {
 
 //----------Leer datos de csv---------------------------------------------
 let numlinea = 0;
-fetch('/datos/ejemplo.csv')
+fetch('/datos/ejemplo.txt')
   .then(respuesta => respuesta.text())
   .then(contenido => {
     let lineas = contenido.split(/\n/);
