@@ -639,6 +639,7 @@ align-items: centrar;
 
 /*--------------- productos.html -----------------------*/
 
+
 .bodyProductos {
   background-color: #0d3d47;
 }
@@ -679,8 +680,8 @@ align-items: centrar;
   color: white;
   border-radius: 5%;
   padding: 4% 10% 4% 10%;
+  cursor: pointer;
 }
-
 
 
 
@@ -693,6 +694,8 @@ align-items: centrar;
 .divCantidadBotones{
   display: flex;
 }
+
+
 .articleCarrito{
   display: grid;
   grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
@@ -750,6 +753,7 @@ align-items: centrar;
   border: none;
   background-color: #368979;
   color: white;
+  cursor: pointer;
   border-radius: 5%;
 }
 
@@ -763,6 +767,7 @@ text-align: center;
 border-radius: 10%;
 margin: 8px 15px 8px 0px;
 border: 2px solid  #368979;
+cursor: pointer;
  }
  .divCerrar{
   display: flex;
@@ -771,10 +776,13 @@ border: 2px solid  #368979;
  }
 
  #cantidadCarrito{
-
   border-radius: 100%;
   color: #368979;
 border-style: none;
+cursor: pointer;
+ }
+ #iconoCarrito{
+  cursor: pointer;
  }
  
 #mensajeCarritoVacio{
@@ -803,6 +811,7 @@ text-align: center;
   #carritoModal{
     max-width: 70%;
     margin: 15%;
+    margin-top:10%;
   }
   .totalAPagar{
     font-size: 1rem;
@@ -835,6 +844,7 @@ text-align: center;
   #carritoModal{
     max-width: 50%;
     margin: 25%;
+    margin-top: 10%;
   }
   #mensajeCarritoVacio{
     top:30px; 
