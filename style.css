@@ -565,13 +565,7 @@ a {
   color:#0d3d47;  
 }
 
-/*form {
-  margin: 0 5% 15% 5%;
-  padding: 5%;
-  border-radius: 5px;
-  background-color: #afcfce;
-  font-family: Arial, Helvetica, sans-serif;
-}*/
+
 
 label {
   display: block;
@@ -968,7 +962,13 @@ text-align: center;
 }
 /*---------------------Catalogo-------------------------*/
 
-
+.formBuscar {
+  margin: 0 5% 15% 5%;
+  padding: 5%;
+  border-radius: 5px;
+  background-color: #afcfce;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 .formBusqueda{
   display: grid;
