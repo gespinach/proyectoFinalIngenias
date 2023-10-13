@@ -5,7 +5,11 @@ let productos = [];
 let carrito = [];
 let acumuladoEnCarrito = document.getElementById("cantidadCarrito");
 
-
+let miCarritoStorage = localStorage.getItem("elLibroFeliz");
+ if(miCarritoStorage.length>1){
+let miCarrito= JSON.parse(miCarritoStorage);
+carrito = miCarrito;
+ }
 
 //-----------condiciones iniciales-------------------------------
 
@@ -119,6 +123,12 @@ boton.style.backgroundColor = "#0d3d47";
  }
 calcularAcumuladoEnCarrito();
 
+localStorage.removeItem("elLibriFeliz");
+let carritoJSON = JSON.stringify(carrito);
+localStorage.setItem('elLibroFeliz', carritoJSON);
+console.log(carritoJSON);
+console.log( JSON.parse( carritoJSON));
+
  }
 
 
@@ -135,7 +145,7 @@ if(carrito.length==0){
   let mensajeVacio = document.getElementById("mensajeCarritoVacio");
   mensajeVacio.innerText = "Carrito Vacío";
   setTimeout(function(){mensajeVacio.innerText=""}, 1000);
-  // document.getElementById("carritoVacio").showModal();
+
 }else{
 crearVentanaCarrito();
 }
