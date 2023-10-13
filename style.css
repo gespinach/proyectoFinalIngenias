@@ -274,10 +274,9 @@ a {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: small;
-  height: 0px;
   overflow: hidden;
-  transition-property: height;
   transition-duration: 1s;
+
 }
 
 
@@ -566,13 +565,7 @@ a {
   color:#0d3d47;  
 }
 
-/*form {
-  margin: 0 5% 15% 5%;
-  padding: 5%;
-  border-radius: 5px;
-  background-color: #afcfce;
-  font-family: Arial, Helvetica, sans-serif;
-}*/
+
 
 label {
   display: block;
@@ -639,6 +632,7 @@ align-items: centrar;
 
 /*--------------- productos.html -----------------------*/
 
+
 .bodyProductos {
   background-color: #0d3d47;
 }
@@ -679,7 +673,123 @@ align-items: centrar;
   color: white;
   border-radius: 5%;
   padding: 4% 10% 4% 10%;
+  cursor: pointer;
 }
+
+
+
+.ulListaDeCarrito{
+  display: grid;
+  grid-template-columns: 1fr;
+
+}
+
+.divCantidadBotones{
+  display: flex;
+}
+
+
+.articleCarrito{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+  align-items:center;
+}
+.articleCarrito img{
+  width: 75%;
+}
+.classCarritoCantidadItem {
+  min-width: 50%;
+  display: flex;
+  align-items: center;
+ justify-content: center;
+}
+.classCarritoSubtotalItem{
+  text-align: right;
+  padding-right: 20px;
+}
+
+.botonCantidad {
+  height: 50%;
+  width: 20%;
+  text-align: center;
+}
+.total{
+  display: flex;
+  justify-content: end;
+  padding: 2%;
+  padding-right: 20px;
+  border-top: #0d3d47 dotted 1px;
+  align-items: center;
+  
+}
+.totalAPagar{
+  font-size: 1.5rem;
+  margin-left: 5%;
+}
+.tituloCarrito{
+  font-size: 1.5rem;
+  text-align: center;
+}
+#carritoModal::backdrop{
+  background-color: rgba(0,0,0,0.55);
+}
+#carritoModal{
+  
+  max-width: 100%;
+  margin: 2%;
+ margin-top: 10%;
+ border-radius: 1%;
+ border: #0d3d47 solid 1px;
+}
+
+.botonConfirmarCompra{
+  border: none;
+  background-color: #368979;
+  color: white;
+  cursor: pointer;
+  border-radius: 5%;
+}
+
+ .botonCerrar{
+  width: 20px;
+  height: 20px;
+  color: #368979;
+  font-size: 18px;
+  font-weight: bold;
+text-align: center;
+border-radius: 10%;
+margin: 8px 15px 8px 0px;
+border: 2px solid  #368979;
+cursor: pointer;
+ }
+ .divCerrar{
+  display: flex;
+  justify-content: right;
+  border-bottom: #0d3d47 dotted 1px;
+ }
+
+ #cantidadCarrito{
+  border-radius: 100%;
+  color: #368979;
+border-style: none;
+cursor: pointer;
+ }
+ #iconoCarrito{
+  cursor: pointer;
+ }
+ 
+#mensajeCarritoVacio{
+position:absolute;
+top: 1%;
+right:18%;
+color: whitesmoke;
+text-align: center;
+
+}
+
+
+
+
 
 /*------------- Responsive productos.html -------------*/
 @media screen and (min-width: 768px) {
@@ -690,6 +800,19 @@ align-items: centrar;
   .listaProductos {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  #carritoModal{
+    max-width: 70%;
+    margin: 15%;
+    margin-top:10%;
+  }
+  .totalAPagar{
+    font-size: 1rem;
+    margin-left: 5%;
+  }
+  #mensajeCarritoVacio{
+    right:12%; 
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -711,6 +834,22 @@ align-items: centrar;
   .botonComprar {
     font-size: large;
   }
+  #carritoModal{
+    max-width: 50%;
+    margin: 25%;
+    margin-top: 10%;
+  }
+  #mensajeCarritoVacio{
+    top:30px; 
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+  #mensajeCarritoVacio{
+    top:60px;
+    right: 13% ; 
+  }  
 }
 
 /*-------------Acá arranca la prueba----------*/
@@ -823,7 +962,13 @@ align-items: centrar;
 }
 /*---------------------Catalogo-------------------------*/
 
-
+.formBuscar {
+  margin: 0 5% 15% 5%;
+  padding: 5%;
+  border-radius: 5px;
+  background-color: #afcfce;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 .formBusqueda{
   display: grid;

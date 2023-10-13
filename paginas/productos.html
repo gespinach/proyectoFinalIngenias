@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body class="bodyProductos">
-    <header class="headerProdoctos">
+    <header class="headerProductos">
       <div class="divLogo">
         <img
           src="../imagenes/logoBlanco.png"
@@ -17,6 +17,14 @@
       </div>
 
       <div class="divAccesos">
+        <p id="mensajeCarritoVacio"></p>
+        <input type="button" id="cantidadCarrito" class="imagenTamañoIcono">
+        <img
+          src="../imagenes/iconoCarrito.png"
+          alt="Carrito"
+          class="imagenTamañoIcono"
+          id="iconoCarrito"
+        />
         <a href="../index.html"><img src="../imagenes/home.png" alt="Inicio" class="imagenTamañoIcono"></a>
         <img
           src="../imagenes/menuBlanco.png"
@@ -39,72 +47,43 @@
         
       </div>
       <section class="sectionProductos">
-        <ul class="listaProductos">
-          <li>
-            <article class="articleProductos">
-              <img src="../imagenes/productos/remera2.png" alt="Remera" />
-              <p>Remera logo Azul</p>
-              <p>$1,00</p>
-              <input type="button" value="Comprar" class="botonComprar" />
-            </article>
-          </li>
-          <li>
-            <article class="articleProductos">
-              <img src="../imagenes/productos/libreta3.png" alt="Libreta" />
-              <p>Libreta logo Azul</p>
-              <p>$1,00</p>
-              <input type="button" value="Comprar" class="botonComprar" />
-            </article>
-          </li>
-          <li>
-            <article class="articleProductos">
-              <img
-                src="../imagenes/productos/fundaCelular.png"
-                alt="Funda de Celular"
-              />
-              <p>Funda de celular</p>
-              <p>$1,00</p>
-              <input type="button" value="Comprar" class="botonComprar" />
-            </article>
-          </li>
-          <li>
-            <article class="articleProductos">
-              <img src="../imagenes/productos/ecoBolsa.png" alt="Ecobolsa" />
-              <p>Ecobolsa</p>
-              <p>$1,00</p>
-              <input type="button" value="Comprar" class="botonComprar" />
-            </article>
-          </li>
-          <li>
-            <article class="articleProductos">
-              <img
-                src="../imagenes/productos/descartables.png"
-                alt="Descartables"
-              />
-              <p>Descartables</p>
-              <p>$1,00</p>
-              <input type="button" value="Comprar" class="botonComprar" />
-            </article>
-          </li>
-          <li>
-            <article class="articleProductos">
-              <img src="../imagenes/productos/llavero.png" alt="Llavero" />
-              <p>Llavero</p>
-              <p>$1,00</p>
-              <input type="button" value="Comprar" class="botonComprar" />
-            </article>
-          </li>
-
-          <li>
-            <article class="articleProductos">
-              <img src="../imagenes/productos/remera4.png" alt="Remera" />
-              <p>Remera roja</p>
-              <p>$1,00</p>
-              <input type="button" value="Comprar" class="botonComprar" />
-            </article>
-          </li>
+        <ul class="listaProductos" id="ulListaDeProductos">
+         
         </ul>
       </section>
+
+      <!------------ --------Modal--------------------------------------------- -->
+
+      <dialog id="carritoModal">
+        
+        <ul class="ulListaDeCarrito" id="ulListaDeCarrito">
+          <div class="divCerrar">
+            <p id="cerrarModal" class="botonCerrar">x</p>
+          </div>
+       <div id="divParaRemover"></div>
+      <!-- <div id="divParaRemover">
+        <article class="articleCarrito">
+          <img src="/imagenes/productos/llavero.png" alt="">
+          <p>Llavero</p>
+          <p>$125</p>
+           <div class="divCantidadBotones">
+            <input type="button" id="mas" class="botonCantidad" value ="+"></input>
+            <p id="carritoCantidadItem" class="classCarritoCantidadItem">3</p>
+            <input type="button" id="menos" class="botonCantidad" value="-"></input>
+          </div>
+          <p class="classCarritoSubtotalItem">$375</p>
+
+        </article>
+      </div> -->
+      </ul>
+      <div class="total">
+        <input type="button" value="Confirmar Compra" class="botonConfirmarCompra">
+        <p class="totalAPagar">Total a pagar</p>
+        <p id="importeTotal" class="totalAPagar"></p>
+      </div>
+
+      </dialog>
+
     </main>
 
     <footer>
@@ -151,6 +130,6 @@
         ></iframe>
       </div>
     </footer>
-    <script src="../script.js"></script>
+    <script src="../scriptProductos.js" type="module"></script>
   </body>
 </html>
