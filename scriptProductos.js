@@ -3,22 +3,24 @@
 
 let productos = [];
 let carrito = [];
+let vaciarCarrito = false;
 let acumuladoEnCarrito = document.getElementById("cantidadCarrito");
 
 let miCarritoStorage = localStorage.getItem("elLibroFeliz");
  if(miCarritoStorage.length>1){
 let miCarrito= JSON.parse(miCarritoStorage);
 carrito = miCarrito;
+console.log(carrito);
  }
 
 //-----------condiciones iniciales-------------------------------
 
 if (carrito.length ==0){
-  acumuladoEnCarrito.style.display = "none";
+  acumuladoEnCarrito.style.visibility = "hidden";
   acumuladoEnCarrito.value = 0;
 }
 else {
-  acumuladoEnCarrito.style.display = "block";
+  acumuladoEnCarrito.style.visibility = "visible";
   calcularAcumuladoEnCarrito();
 }
 
@@ -110,8 +112,8 @@ boton.style.backgroundColor = "#0d3d47";
 
  function agregarACarrito(codigo){
  let productoElegido = new Producto
- productoElegido = productos.find((producto) => producto.codigo === codigo)
- let itemElegido = carrito.find((item)=> item.producto === productoElegido)
+ productoElegido = productos.find((producto) => producto.codigo == codigo)
+ let itemElegido = carrito.find((item)=> item.producto.codigo == codigo)
  let i = carrito.indexOf(itemElegido);
  console.log(i);
  if (i==-1){
@@ -123,11 +125,10 @@ boton.style.backgroundColor = "#0d3d47";
  }
 calcularAcumuladoEnCarrito();
 
-localStorage.removeItem("elLibriFeliz");
+// localStorage.removeItem("elLibriFeliz");
 let carritoJSON = JSON.stringify(carrito);
 localStorage.setItem('elLibroFeliz', carritoJSON);
-console.log(carritoJSON);
-console.log( JSON.parse( carritoJSON));
+
 
  }
 
@@ -242,11 +243,30 @@ let cerrarModal = document.getElementById("cerrarModal");
 
 cerrarModal.addEventListener("click", function(event){
 event.preventDefault();
-document.getElementById("carritoModal").close();
+cerrarCarrito();
 })
 
 
 
+//-----------------------------------------------------------------------
+
+function cerrarCarrito(){
+document.getElementById("carritoModal").close();
+if(vaciarCarrito =true){
+  carrito = [];
+  vaciarCarrito = false;
+  acumuladoEnCarrito.style.visibility = "hidden";
+  acumuladoEnCarrito.value = 0;
+  confirmarCompra.value = "Confirmar Compra"
+  confirmarCompra.style.backgroundColor = "#368979";
+  let botonesComprar = document.querySelector(".botonComprar");
+  botonesComprar.style.backgroundColor = "#368979";
+  botonesComprar.value = "Comprar";
+}
+}
+
+
+//-----------------------------------------------------------------------
 
 function calcularAcumuladoEnCarrito(){
   let cantidadCalculada = 0;
@@ -254,9 +274,22 @@ function calcularAcumuladoEnCarrito(){
     cantidadCalculada = cantidadCalculada + carrito[i].cantidad;
   }
 acumuladoEnCarrito.value = cantidadCalculada;
-acumuladoEnCarrito.style.display = "block";
-
+acumuladoEnCarrito.style.visibility = "visible";
 }
+
+//-----------------------------------------------------------------------
+
+let confirmarCompra = document.getElementById("idBotonConfirmarCompra");
+confirmarCompra.addEventListener("click", function(event){
+event.preventDefault;  
+confirmarCompra.value = "Compra Confirmada!";
+confirmarCompra.style.backgroundColor = "#0d3d47";
+localStorage.setItem("elLibroFeliz","0");
+vaciarCarrito = true;
+
+})
+
+
 
 //------------------------------------------------------------------------
 function activarBotonMas(botonMas){
