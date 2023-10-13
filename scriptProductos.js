@@ -6,13 +6,18 @@ let carrito = [];
 let vaciarCarrito = false;
 let acumuladoEnCarrito = document.getElementById("cantidadCarrito");
 
+
+
+for (let i = 0; i < localStorage.length; i++) {
+  let clave = localStorage.key(i);
+  if (clave == "elLibroFeliz"){
 let miCarritoStorage = localStorage.getItem("elLibroFeliz");
  if(miCarritoStorage.length>1){
 let miCarrito= JSON.parse(miCarritoStorage);
 carrito = miCarrito;
-console.log(carrito);
  }
-
+}
+}
 //-----------condiciones iniciales-------------------------------
 
 if (carrito.length ==0){
@@ -115,7 +120,6 @@ boton.style.backgroundColor = "#0d3d47";
  productoElegido = productos.find((producto) => producto.codigo == codigo)
  let itemElegido = carrito.find((item)=> item.producto.codigo == codigo)
  let i = carrito.indexOf(itemElegido);
- console.log(i);
  if (i==-1){
  let nuevoItemCarrito = new ItemCarrito(productoElegido, 1);
  carrito.push(nuevoItemCarrito);
@@ -125,9 +129,9 @@ boton.style.backgroundColor = "#0d3d47";
  }
 calcularAcumuladoEnCarrito();
 
-// localStorage.removeItem("elLibriFeliz");
+
 let carritoJSON = JSON.stringify(carrito);
-localStorage.setItem('elLibroFeliz', carritoJSON);
+localStorage.setItem("elLibroFeliz", carritoJSON);
 
 
  }
@@ -182,12 +186,10 @@ let totalAPagar = 0;
 
 for (let i=0; i<carrito.length; i++){
 let item = carrito[i];
-console.log(carrito[i]);
 let articulo = document.createElement("article");
 articulo.classList.add("articleCarrito");
 articulo.id = item.producto.codigo;
 let imagen = document.createElement("img");
-console.log(item.producto.imagen);
 imagen.src = item.producto.imagen ;
 let nombreProducto = document.createElement("p");
 nombreProducto.innerText = item.producto.nombreProducto;
@@ -252,16 +254,19 @@ cerrarCarrito();
 
 function cerrarCarrito(){
 document.getElementById("carritoModal").close();
-if(vaciarCarrito =true){
+if(vaciarCarrito){
   carrito = [];
   vaciarCarrito = false;
   acumuladoEnCarrito.style.visibility = "hidden";
   acumuladoEnCarrito.value = 0;
   confirmarCompra.value = "Confirmar Compra"
   confirmarCompra.style.backgroundColor = "#368979";
-  let botonesComprar = document.querySelector(".botonComprar");
-  botonesComprar.style.backgroundColor = "#368979";
-  botonesComprar.value = "Comprar";
+  let botonesComprar = document.querySelectorAll(".botonComprar");
+  botonesComprar.forEach(element => {
+     element.style.backgroundColor = "#368979";
+    element.value = "Comprar";
+  });
+ 
 }
 }
 
