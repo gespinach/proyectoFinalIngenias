@@ -13,7 +13,6 @@ a:hover {
   color:#FDC96F;
 }
 
-
 /*ENCABEZADO DE TODAS LAS PAGINAS*/
 .imagenTamañoLogo {
   width: 60%;
@@ -30,7 +29,7 @@ a:hover {
 Header {
   display: grid;
   grid-template-columns: 4fr 1fr;
-  margin-right: 15px;
+  padding-right: 15px;
 }
 
 .divLogo {
@@ -45,8 +44,24 @@ Header {
 }
 
 body {
-  background-color: #0d3d47;
+  /* background-color: #0d3d47; */
   overflow-y: scroll;
+
+  background-image: url(./imagenes/fondoDecorativoAzul.png);
+  background-size: repeat;
+}
+
+header{
+  background-color: #0d3d47; 
+}
+
+footer{
+  background-color: #0d3d47;  
+}
+
+.bannerNoMobile {
+  /* display: none; */
+  height: 20px !important;
 }
 
 /*----------------LOGIN-------------------*/
@@ -381,9 +396,18 @@ a {
   .divLibroDelDia {
     font-size: medium;
   }
+  #idBotonHamburguesa{
+    display: none;
+  }
   .banner {
     height: 160px;
+    
   }
+  .bannerNoMobile{
+    display:block;
+    height: 30px !important;
+  }
+
   .pDescripcion {
     font-size: 15px;
   }
@@ -453,8 +477,8 @@ a {
     font-size: 20px;
   }
 
-  .banner {
-    height: 220px;
+  .bannerNoMobile {
+    height: 30px !important;
   }
 
   .divDescripcion h3 {
@@ -633,9 +657,11 @@ align-items: centrar;
 /*--------------- productos.html -----------------------*/
 
 
-.bodyProductos {
-  background-color: #0d3d47;
+
+#pNovedadesProductos{
+  text-align: center;
 }
+
 .listaProductos {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -963,8 +989,12 @@ text-align: center;
 }
 /*---------------------Catalogo-------------------------*/
 
+.menu{
+  background-color: #0d3d47;
+}
+
 .formBuscar {
-  margin: 0 5% 15% 5%;
+  margin: 5% 5% 10% 5%;
   padding: 5%;
   border-radius: 5px;
   background-color: #afcfce;
@@ -1005,6 +1035,28 @@ text-align: center;
   display:flex;
   justify-content: center;
  }
+#sectionTablaCatalogo{
+  margin:1% 5% 1% 5% ;
+}
+
+.tablaCatalogo p{
+color:whitesmoke;
+}
+
+.tablaCatalogo{
+  margin: 1%;
+  display: grid;
+  grid-template-columns: 1fr 6fr 2fr;
+  grid-row: 3;
+  padding: 1%;
+  border-bottom: dashed #afcfce 1px;
+}
+
+
+.tablaCatalogo p{
+  overflow: hidden;
+}
+
 
 /*------------Responsive Catalogo----------------*/
 
@@ -1012,8 +1064,8 @@ text-align: center;
   
   .formBuscar {
     padding: 10px;
-    margin: 0 5% 15% 5%;
-    padding: 5%;
+    margin: 1% 5% 1% 5%;
+    padding: 1%;
     border-radius: 5px;
     background-color: #afcfce;
     font-family: Arial, Helvetica, sans-serif;
@@ -1032,6 +1084,13 @@ text-align: center;
   grid-template-columns: repeat(2, 1fr);
  column-gap: 5%;
 }
+#idBotonBuscar{
+  font-size: 12px;
+}
+.sectionTablaCatalogo p{
+  font-size: 12px;
+}
+
 }
 
 @media screen and (min-width: 1024px){
@@ -1039,6 +1098,10 @@ text-align: center;
     grid-template-columns: repeat(3, 1fr);
    
   }
+.tablaCatalogo{
+  grid-template-columns: 1fr 5fr 2fr 0fr 4fr 0fr 0fr 4fr;
+}
+
 }
 
 
