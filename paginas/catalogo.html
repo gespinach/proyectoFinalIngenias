@@ -30,39 +30,70 @@
 
       </nav>
 
+      <div class="banner bannerNoMobile">
+        <img src="../imagenes/biblioteca.jpg" alt="Biblioteca" class="imagenTamañoBanner">
+      </div>
 
-</main>
 
+<Section class="fondoDecorativo">
 <form action="" class="formBuscar" >
     <section class="formBusqueda">
     <article>
     <label for="titulo" >Título</label>
-    <input type="text" name="tiutlo">
+    <input type="text" name="tiutlo" id="idTitulo">
 </article>
 <article>
     <label for="autor" >Autor</label>
-    <input type="text" name="autor">
+    <input type="text" name="autor" id="idAutor">
 </article>
 <article>
     <label for="genero" >Género</label>
-    <input type="text" name="genero">
+    <input type="text" name="genero" id="idGenero">
 </article>
 <article>
     <label for="tema" >Tema</label>
-    <input type="text" name="tema">
+    <input type="text" name="tema" id="idTema">
 </article>
 <article>
-    <label for="id" >Id</label>
-    <input type="text" name="id">
+    <label for="codigo" >Id</label>
+    <input type="text" name="codigo" id="idCodigo">
 </article>
 </section>
 <div class="centrarBuscar">
-    <input class="botonBuscar" type="button" value="BUSCAR"/>
+    <input class="botonBuscar" type="button" value="Buscar" id="idBotonBuscar"/>
 </div>
 
 
 </form>
+</Section>
 
+<section id="sectionTablaCatalogo">
+    <p id="mensaje"></p>
+    <section id="paraRemover">
+
+    </section>
+
+</section>
+
+<template id="itemTablaCatalogo" class="itemTablaCatalogo">
+<Section id="paraRemover">
+    <article class="tablaCatalogo">
+    <p class="codigo">A101</p>
+    <p class="titulo">Cien años de soledad</p>
+    <p class="genero">Prueba1</p>
+    <p></p>
+    <p class="autor">Prueba1</p>
+    <p></p>
+    <p></p>
+    <p class="tema">Prueba1</p>
+    </article>
+
+</Section>
+</template>   
+    
+
+
+</main>
 <footer>
 <div class="datos">
     <div class="footer">
@@ -87,6 +118,6 @@
       
   </div> 
   </footer>
-  <script src="../script.js"></script>
+  <script src="../scriptCatalogo.js" type="module"></script>
 </body>
 </html>
