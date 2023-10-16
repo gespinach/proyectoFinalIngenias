@@ -5,6 +5,10 @@ registro.addEventListener('submit', (e)=>{
    const email = document.querySelector('#email').value
    const password = document.querySelector('#password').value
 
+   if(password.length < 8){
+      return alert('La contraseña debe contener al menos 8 caracteres')
+   }
+
    const Usuarios = JSON.parse(localStorage.getItem('usuarios')) || []
    const usuarioRegistrado = Usuarios.find(user => user.email === email)
    if(usuarioRegistrado){
