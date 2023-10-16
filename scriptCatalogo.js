@@ -1,22 +1,5 @@
-// var fruits = ["apple", "banana", "grapes", "mango", "orange"];
-
-/**
- * Filtra la matríz en función de un criterio de búsqueda (query)
- */
-// function filterItems(query) {
-//   return fruits.filter(function (el) {
-//     return el.toLowerCase().indexOf(query.toLowerCase()) > -1;
-//   });
-// }
-
-// console.log(filterItems("ap")); // ['apple', 'grapes']
-// console.log(filterItems("an")); // ['banana', 'mango', 'orange']
-
-//titulo, autor, genero, tema, id
-
 
 let catalogo = [];
-
 
 class Libro {
     constructor(codigo, titulo, autor, genero, tema) {
@@ -79,7 +62,6 @@ else{
 }
 
 if(autorBuscado.length>0){
-  console.log(listado);
 let nuevoListado = listado.filter(libro =>libro.autor.indexOf(autorBuscado)>-1);
 listado = nuevoListado;
 
@@ -94,22 +76,35 @@ if(generoBuscado.length>0){
     let nuevoListado3 = listado.filter(libro =>libro.tema.indexOf(temaBuscado)>-1);
     listado = nuevoListado3;
     }
-    console.log("listado final" );
-    console.log(listado );
-     armarListado(listado);
+    
 }
+if (listado.length==0) {
 
+      document.querySelector("#mensaje").innerText = "No se encontraron resultados";
+      let seccionCatalogo = document.getElementById("sectionTablaCatalogo");
+     seccionCatalogo.removeChild(document.getElementById("paraRemover"));
+
+    let seccionParaRemover = document.createElement("section");
+    seccionParaRemover.id = "paraRemover";
+    seccionCatalogo.appendChild(seccionParaRemover);
+    }else{
+      document.querySelector("#mensaje").innerText = "";
+     armarListado(listado);
+    } 
 }
 );
 
 
 
 function armarListado(listado){
-  let seccionCatalogo = document.getElementById("sectionTablaCatalogo");
+let seccionCatalogo = document.getElementById("sectionTablaCatalogo");
+
  seccionCatalogo.removeChild(document.getElementById("paraRemover"));
 
 let seccionParaRemover = document.createElement("section");
 seccionParaRemover.id = "paraRemover";
+
+
 
 listado.forEach(libro => {
 
@@ -143,8 +138,8 @@ seccionParaRemover.appendChild(articleLibro);
 seccionCatalogo.appendChild(seccionParaRemover);
 
 });
-}
 
+}
 
 // }
 
