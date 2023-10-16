@@ -42,14 +42,55 @@ fetch(catalogoCsv)
  
  
  buscar.addEventListener("click", function(event){
+  event.preventDefault;
+  if (buscar.value == "Buscar"){
+    let codigoBuscado = document.getElementById("idCodigo").value;
+    let tituloBuscado = document.getElementById("idTitulo").value;
+    let autorBuscado = document.getElementById("idAutor").value;
+    let generoBuscado = document.getElementById("idGenero").value;
+    let temaBuscado = document.getElementById("idTema").value;
 
-event.preventDefault;
+    if(codigoBuscado =="" && tituloBuscado==""&& autorBuscado=="" && generoBuscado=="" && temaBuscado=="" ){
+      document.querySelector("#mensaje").innerText = "Ingrese al menos un criterio de búsqueda";
+    }else{
+    armarFiltro();
+    buscar.value = "Nueva búsqueda"
+    document.querySelector("#mensaje").innerText = "";
+    }
 
+
+  }else{
+    let seccionCatalogo = document.getElementById("sectionTablaCatalogo");
+    seccionCatalogo.removeChild(document.getElementById("paraRemover"));
+
+   let seccionParaRemover = document.createElement("section");
+   seccionParaRemover.id = "paraRemover";
+   seccionCatalogo.appendChild(seccionParaRemover);
+
+    
+   document.getElementById("idCodigo").value=""
+   document.getElementById("idTitulo").value=""
+   document.getElementById("idAutor").value=""
+   document.getElementById("idGenero").value=""
+   document.getElementById("idTema").value=""
+
+   buscar.value = "Buscar";
+  }
+
+ });
+
+//---------------------------------------------------------------------
+
+
+
+
+function armarFiltro(){
 let codigoBuscado = document.getElementById("idCodigo").value;
 let tituloBuscado = document.getElementById("idTitulo").value;
 let autorBuscado = document.getElementById("idAutor").value;
 let generoBuscado = document.getElementById("idGenero").value;
 let temaBuscado = document.getElementById("idTema").value;
+
 
 let listado = catalogo;
 
@@ -92,8 +133,10 @@ if (listado.length==0) {
      armarListado(listado);
     } 
 }
-);
+;
 
+
+//--------------------------------------------------------------------------------
 
 
 function armarListado(listado){

@@ -33,7 +33,7 @@ Header {
 }
 
 .divLogo {
-  width: 90%;
+  width: 60%;
 }
 
 .divAccesos {
@@ -1030,6 +1030,8 @@ text-align: center;
   background-color: #368979;
  
 }
+
+
 .centrarBuscar{
   margin-top: 5px;
   display:flex;
@@ -1090,6 +1092,8 @@ color:whitesmoke;
 #idBotonBuscar{
   font-size: 12px;
 }
+
+
 .sectionTablaCatalogo p{
   font-size: 12px;
 }
