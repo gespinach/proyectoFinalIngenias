@@ -513,32 +513,48 @@ a {
     width: 100%;
 }
 
-.inicio-donar {
-    font-family: Arial, Helvetica, sans-serif;
-    color:white;
-    text-align: center;
-    padding: 5%;
+.pDonaciones p {
+  width: 88%;
+  background-color: #afcfce;
+  margin: 30px 0 30px 100px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px black;
+  color: #0d3d47;
+  font-size: 25px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
-.titulo-donar {
-    font-family: Arial, Helvetica, sans-serif;  
-    color:#0d3d47;
-    margin-bottom: 5%;
+.formBuscar .radio-donar { 
+  display: grid;
+  grid-template-columns: 15%  85%;
+  margin: 5%;
+  margin-left: 0%;
+  color:#0d3d47;  
+  font-size: 25px;
 }
 
-.select {
-  margin-bottom: 2%;
-  height: 30px;
+.formBuscar .contenido-form-donar label{
+  font-size: 25px;
+  
+}
+
+.formBuscar .select {
+  padding: 10px;
   border: #368979 solid 2px;
   width: 100%;
 }
 
-.radio-donar { 
-  display: grid;
-  grid-template-columns: 10%  90%;
-  margin: 5%; 
-  color:#0d3d47;  
-}
+/*.formBuscar .select {
+  padding: 20px;
+  margin-bottom: 2%;
+  height: 30px;
+  border: #368979 solid 2px;
+  width: 100%;
+  
+}*/
 
 /*form {
   margin: 0 5% 15% 5%;
@@ -563,11 +579,14 @@ input {
 #btn-form {
   width: 40%;
   margin-top: 2%; 
+  padding: 20px 0 40px 0;
+  font-size: 25px boild;
 }
 
-.divBoton {
+.centrarBuscar .input {
   display: flex;
   justify-content: center;
+
 }
 
 /* ------------responsive donaciones------------------------ */
