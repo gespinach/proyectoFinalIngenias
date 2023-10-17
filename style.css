@@ -33,7 +33,7 @@ Header {
 }
 
 .divLogo {
-  width: 60%;
+  width: 90%;
 }
 
 .divAccesos {
@@ -386,7 +386,9 @@ a {
   * {
     font-size: medium;
   }
-
+  .divLogo {
+    width: 60%;
+  }
   .imagenTamañoIcono {
     width: 40px;
   }
