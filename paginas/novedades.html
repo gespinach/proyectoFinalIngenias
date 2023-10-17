@@ -14,81 +14,27 @@
   
           <div class="divAccesos">
             <a href="../index.html"><img src="../imagenes/home.png" alt="Inicio" class="imagenTamañoIcono"></a>
-            <img src="../imagenes/menuBlanco.png" alt="Menu" class="imagenTamañoIcono">
+            <button class="abrir-menu" id="abrir">
+              <img src="../imagenes/menuBlanco.png" alt="Menu" class="imagenTamañoIcono">
+            </button>
           </div>
 
     </header>
     <main>
-      <nav class="menu">
-        <a href="catalogo.html">CATÁLOGO</a>
-        <a href="novedades.html">NOVEDADES</a>
-        <a href="donaciones.html">DONAR</a>
-        <a href="productos.html">PRODUCTOS</a>
+      <nav class="menu" id="menu">
+        <button class="cerrar-menu" id="cerrar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+          </svg>
+        </button>
+        <ul class="list-menu">
+          <li><a href="catalogo.html">CATÁLOGO</a></li>
+          <li><a href="novedades.html">NOVEDADES</a></li>
+          <li><a href="donaciones.html">DONAR</a></li>
+          <li> <a href="productos.html">PRODUCTOS</a></li>
+      </ul>
       </nav>
 
-     
-
-    <!--<div class="divNovedades">
-
-      <p class="pNovedades"> <strong class="tituloNoticia"> RECESO INVERNAL </strong>
-        En el receso invernal la biblioteca permanecerá cerrada del 17 al 28 de julio inclusive. Ya se están realizando los préstamos domiciliarios con fecha posterior al receso. El 31 de julio retomaremos nuestras actividades en sus horarios habituales.
-        <img class="noticia" src="../imagenes/recesoInvernal.jpg" alt="receso">
-      </p>
-
-      <p class="pNovedades"><strong class="tituloNoticia">ANIVERSARIO 50: </strong> 
-        La Biblioteca está de fiesta este mes al celebrar su 50 aniversario.  Durante medio siglo, esta querida institución ha sido un pilar fundamental para la comunidad, ofreciendo conocimiento, cultura y entretenimiento a generaciones de lectores.
-        <img class="noticia" src="../imagenes/festejo.jpg" alt="festejo">
-      </p>
-
-      <p class="pNovedades"> <strong class="tituloNoticia">¡VENÍ A CONOCER LA BIBLIOTECA! </strong>
-        Estas visitas guiadas libres y gratuitas están pensadas para el público en general que desee conocer los variados espacios y servicios de nuestra biblioteca. Así también instituciones específicas, quiénes deberán realizar una solicitud mediante formulario y hacer la reserva previa.
-        La visita durará unos 45 minutos.
-        Los recorridos se realizan los MARTES y JUEVES
-        <img class="noticia" src="../imagenes/visita.jpg" alt="visita">
-      </p>
-
-      <p class="pNovedades"> <strong class="tituloNoticia">PROMOCIÓN DE LA SALUD Y PREVENCIÓN DE PICADURAS POR ESCORPIÓN</strong>
-        Este JUEVES 17 DE AGOSTO a las 10:00 hs., invitamos a toda la comunidad universitaria y vecinos a esta charla abierta a todo público "Promoción de la salud y prevención de picaduras por escorpión" para que se interioricen de los cuidados que hay que tener ante la presencia de alacranes en nuestra región, tanto en zonas urbanas como rurales.
-
-        Estar informados nos aporta herramientas para prevenir y saber accionar a tiempo.
-       
-       ¡Esperamos contar con su presencia!.
-       <img class="noticia" src="../imagenes/escorpion.jpg" alt="escorpion">
-      </p>
-
-      <p class="pNovedades"> <strong class="tituloNoticia">CONCURSO DE INVESTIGACIÓN </strong>
-        <strong>¿Quienes pueden participar?</strong>
-        Podrán participar de la convocatoria investigadores ya formados o en formación, y también estudiantes del nuvel superior (con más de 60% de las materias de la carrera aprobadas). Las personas que se postulen deberán tener la nacionalidad Argentina o, en caso de ser extranjeras/os, contar con la recidencia del país.
-        <img class="noticia" src="../imagenes/concurso.jpg" alt="">
-      </p>
-
-      <p class="pNovedades"> <strong class="tituloNoticia">SALA DE LECTURA</strong>
-        De acceso libre a todo el público, sin necesidad de ser socio. Ideal para leer tranquilo/a y despejar la mente, posee libros de todos los tipos y generos. Se requiere presentar identificación mientras se permanezca en la Sala. 
-        <img class="noticia" src="../imagenes/lectura.jpg" alt="">
-      </p>
-
-      <p class="pNovedades"> <strong class="tituloNoticia">SALA PARLANTE</strong>
-        De acceso libre a todo el público, sin necesidad de ser socio. Ideal para estudiar en grupo, posee material destinado a alumnos de escuelas secundarias y material universitario. Se requiere presentar identificación mientras se permanezca en la Sala.  Esta sala también cuanta con wifi para que puedan acceder a cualquier tipo de información.
-        <img class="noticia" src="../imagenes/salaParlante.jpg" alt="">
-      </p>
-
-      <p class="pNovedades"> <strong class="tituloNoticia">SALA JUVENIL Y SECTOR INFANTIL </strong>
-        De acceso libre a todo el público, sin necesidad de ser socio para trabajar y consultar en la Sala. Posee material destinado a alumnos de escuelas secundarias, entre los que se encuentran libros de literatura clásica y recreativa, libros de estudio, enciclopeduas y diccionarios. Recientemente se ha creado el sector infantil con material disponible para lectura y préstamo a domicilio, destinado a niños entre 3 y 12 años.
-        <img class="noticia" src="../imagenes/sectorJuvenil.jpg" alt="">
-      </p>
-
-      <p class="pNovedades"> <strong class="tituloNoticia">AULA DE NAVEGACIÓN </strong>
-        De uso exclusivo para los socios de la biblioteca. Cuenta con 15 PCs, todas con acceso a internet y a la Biblioteca Electrónica del miniterio de educación, cultura y tecnología (BECyT), la cual está suscripra a catálogos de bases de datos referenciales (4) y de texto completo (25), artículos de revistas, libros (22.518 registros) o capítulos y conferencias y congresos (19.011 registros), todas nacionales e internacionales. 
-        <img class="noticia" src="../imagenes/aulaNavegacion.jpg" alt="">
-      </p>
-
-      <p class="pNovedades"> <strong class="tituloNoticia">GESTIÓN Y DESARROLLO DE COLECCIONES</strong>
-        Las colecciones son soporte fundamental de los sercicios de la biblioteca y la selección y tratamiebto de sus recursos constituye una de las funciones más importantes para su formación, orientación y desarrollo, ya que garantiza el control de calidad de los materiales que ingresan a sus fondos.
-        La dirección de Gestión y desarrollo de colecciones tiene como misión, la planificación, formación, evaluación, mantenimiento, preservación y expurgo del material, como así también los procesamientos técnicos adecuados y necesarios para su almacenamiento y localización cumpliendo con todas las normaticas vigentes.
-        <img class="noticia" src="../imagenes/gestionYdesarrollo.jpg" alt="">
-
-      </p>
-    </div>-->
     <div id="idNovedades" class="divNovedades">
         
     </div>
@@ -117,5 +63,6 @@
     </div> 
     </footer>
   <script src="../scriptNovedades.js"></script> <!--script.js-->
+  <script src="../scriptIndex.js"></script>
 </body>
 </html>
