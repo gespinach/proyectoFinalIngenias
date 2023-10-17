@@ -15,54 +15,92 @@
 
         <div class="divAccesos">
           <a href="../index.html"><img src="../imagenes/home.png" alt="Inicio" class="imagenTamañoIcono"></a>
-          <img src="../imagenes/menuBlanco.png" alt="Menu" class="imagenTamañoIcono">
+          <button class="abrir-menu" id="abrir">
+            <img src="../imagenes/menuBlanco.png" alt="Menu" class="imagenTamañoIcono">
+          </button>
         </div>
 
 
     </header>
 <main>
-    <nav class="menu">
-      
-        <a href="catalogo.html">CATÁLOGO</a>
-        <a href="novedades.html">NOVEDADES</a>
-        <a href="donaciones.html">DONAR</a>
-        <a href="productos.html">PRODUCTOS</a>
-
+    <nav class="menu" id="menu">
+        <button class="cerrar-menu" id="cerrar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+          </svg>
+        </button>
+        <ul class="list-menu">
+          <li><a href="catalogo.html">CATÁLOGO</a></li>
+          <li><a href="novedades.html">NOVEDADES</a></li>
+          <li><a href="donaciones.html">DONAR</a></li>
+          <li> <a href="productos.html">PRODUCTOS</a></li>
+      </ul>
       </nav>
 
+      <div class="banner bannerNoMobile">
+        <img src="../imagenes/biblioteca.jpg" alt="Biblioteca" class="imagenTamañoBanner">
+      </div>
 
-</main>
 
+<Section class="fondoDecorativo">
 <form action="" class="formBuscar" >
     <section class="formBusqueda">
     <article>
     <label for="titulo" >Título</label>
-    <input type="text" name="tiutlo">
+    <input type="text" name="tiutlo" id="idTitulo">
 </article>
 <article>
     <label for="autor" >Autor</label>
-    <input type="text" name="autor">
+    <input type="text" name="autor" id="idAutor">
 </article>
 <article>
     <label for="genero" >Género</label>
-    <input type="text" name="genero">
+    <input type="text" name="genero" id="idGenero">
 </article>
 <article>
     <label for="tema" >Tema</label>
-    <input type="text" name="tema">
+    <input type="text" name="tema" id="idTema">
 </article>
 <article>
-    <label for="id" >Id</label>
-    <input type="text" name="id">
+    <label for="codigo" >Id</label>
+    <input type="text" name="codigo" id="idCodigo">
 </article>
 </section>
 <div class="centrarBuscar">
-    <input class="botonBuscar" type="button" value="BUSCAR"/>
+    <input class="botonBuscar" type="button" value="Buscar" id="idBotonBuscar"/>
 </div>
 
 
 </form>
+</Section>
 
+<section id="sectionTablaCatalogo">
+    <p id="mensaje"></p>
+    <section id="paraRemover">
+
+    </section>
+
+</section>
+
+<template id="itemTablaCatalogo" class="itemTablaCatalogo">
+<Section id="paraRemover">
+    <article class="tablaCatalogo">
+    <p class="codigo">A101</p>
+    <p class="titulo">Cien años de soledad</p>
+    <p class="genero">Prueba1</p>
+    <p></p>
+    <p class="autor">Prueba1</p>
+    <p></p>
+    <p></p>
+    <p class="tema">Prueba1</p>
+    </article>
+
+</Section>
+</template>   
+    
+
+
+</main>
 <footer>
 <div class="datos">
     <div class="footer">
@@ -88,5 +126,7 @@
   </div> 
   </footer>
   <script src="../script.js"></script>
+  <script src="../scriptIndex.js"></script>
+  <script src="../scriptCatalogo.js" type="module"></script>
 </body>
 </html>

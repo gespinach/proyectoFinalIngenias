@@ -13,7 +13,6 @@ a:hover {
   color:#FDC96F;
 }
 
-
 /*ENCABEZADO DE TODAS LAS PAGINAS*/
 .imagenTamañoLogo {
   width: 60%;
@@ -30,7 +29,7 @@ a:hover {
 Header {
   display: grid;
   grid-template-columns: 4fr 1fr;
-  margin-right: 15px;
+  padding-right: 15px;
 }
 
 .divLogo {
@@ -45,8 +44,24 @@ Header {
 }
 
 body {
-  background-color: #0d3d47;
+  /* background-color: #0d3d47; */
   overflow-y: scroll;
+
+  background-image: url(./imagenes/fondoDecorativoAzul.png);
+  background-size: repeat;
+}
+
+header{
+  background-color: #0d3d47; 
+}
+
+footer{
+  background-color: #0d3d47;  
+}
+
+.bannerNoMobile {
+  /* display: none; */
+  height: 20px !important;
 }
 
 /*----------------LOGIN-------------------*/
@@ -274,10 +289,9 @@ a {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: small;
-  height: 0px;
   overflow: hidden;
-  transition-property: height;
   transition-duration: 1s;
+
 }
 
 
@@ -372,7 +386,9 @@ a {
   * {
     font-size: medium;
   }
-
+  .divLogo {
+    width: 60%;
+  }
   .imagenTamañoIcono {
     width: 40px;
   }
@@ -382,9 +398,18 @@ a {
   .divLibroDelDia {
     font-size: medium;
   }
+  #idBotonHamburguesa{
+    display: none;
+  }
   .banner {
     height: 160px;
+    
   }
+  .bannerNoMobile{
+    display:block;
+    height: 30px !important;
+  }
+
   .pDescripcion {
     font-size: 15px;
   }
@@ -454,8 +479,8 @@ a {
     font-size: 20px;
   }
 
-  .banner {
-    height: 220px;
+  .bannerNoMobile {
+    height: 30px !important;
   }
 
   .divDescripcion h3 {
@@ -506,6 +531,32 @@ a {
     width: 400px;
     height: 350px;
   }
+  img.noticia {
+    display: block; /*Cambia la imagen a un elemento de bloque */
+    margin: 0 auto; /*Centra la imagen horizontalmente dentro del párrafo */
+  }
+
+}
+
+
+@media screen and (min-width: 1440px) {
+  .divNovedades {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+  }
+  .noticia{
+    width: 300px;
+    height: 200px;
+    padding-top: 20px;
+  }
+  .pNovedades{
+    padding-bottom: 20px;
+  }
+  img.noticia {
+    display: block; /* Cambia la imagen a un elemento de bloque */
+    margin: 0 auto; /* Centra la imagen horizontalmente dentro del párrafo */
+  }
+
 }
 
   /*---------------------PAGINA DE DONACIONES-----------------------*/
@@ -556,13 +607,7 @@ a {
   
 }*/
 
-/*form {
-  margin: 0 5% 15% 5%;
-  padding: 5%;
-  border-radius: 5px;
-  background-color: #afcfce;
-  font-family: Arial, Helvetica, sans-serif;
-}*/
+
 
 label {
   display: block;
@@ -632,9 +677,12 @@ align-items: centrar;
 
 /*--------------- productos.html -----------------------*/
 
-.bodyProductos {
-  background-color: #0d3d47;
+
+
+#pNovedadesProductos{
+  text-align: center;
 }
+
 .listaProductos {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -672,7 +720,123 @@ align-items: centrar;
   color: white;
   border-radius: 5%;
   padding: 4% 10% 4% 10%;
+  cursor: pointer;
 }
+
+
+
+.ulListaDeCarrito{
+  display: grid;
+  grid-template-columns: 1fr;
+
+}
+
+.divCantidadBotones{
+  display: flex;
+}
+
+
+.articleCarrito{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+  align-items:center;
+}
+.articleCarrito img{
+  width: 75%;
+}
+.classCarritoCantidadItem {
+  min-width: 50%;
+  display: flex;
+  align-items: center;
+ justify-content: center;
+}
+.classCarritoSubtotalItem{
+  text-align: right;
+  padding-right: 20px;
+}
+
+.botonCantidad {
+  height: 50%;
+  width: 20%;
+  text-align: center;
+}
+.total{
+  display: flex;
+  justify-content: end;
+  padding: 2%;
+  padding-right: 20px;
+  border-top: #0d3d47 dotted 1px;
+  align-items: center;
+  
+}
+.totalAPagar{
+  font-size: 1.5rem;
+  margin-left: 5%;
+}
+.tituloCarrito{
+  font-size: 1.5rem;
+  text-align: center;
+}
+#carritoModal::backdrop{
+  background-color: rgba(0,0,0,0.55);
+}
+#carritoModal{
+  
+  max-width: 100%;
+  margin: 2%;
+ margin-top: 10%;
+ border-radius: 1%;
+ border: #0d3d47 solid 1px;
+}
+
+.botonConfirmarCompra{
+  border: none;
+  background-color: #368979;
+  color: white;
+  cursor: pointer;
+  border-radius: 5%;
+}
+
+ .botonCerrar{
+  width: 20px;
+  height: 20px;
+  color: #368979;
+  font-size: 18px;
+  font-weight: bold;
+text-align: center;
+border-radius: 10%;
+margin: 8px 15px 8px 0px;
+border: 2px solid  #368979;
+cursor: pointer;
+ }
+ .divCerrar{
+  display: flex;
+  justify-content: right;
+  border-bottom: #0d3d47 dotted 1px;
+ }
+
+ #cantidadCarrito{
+  border-radius: 100%;
+  color: #368979;
+border-style: none;
+cursor: pointer;
+ }
+ #iconoCarrito{
+  cursor: pointer;
+ }
+ 
+#mensajeCarritoVacio{
+position:absolute;
+top: 1%;
+right:14%;
+color: whitesmoke;
+text-align: center;
+
+}
+
+
+
+
 
 /*------------- Responsive productos.html -------------*/
 @media screen and (min-width: 768px) {
@@ -683,6 +847,20 @@ align-items: centrar;
   .listaProductos {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  #carritoModal{
+    max-width: 70%;
+    margin: 15%;
+    margin-top:10%;
+  }
+  .totalAPagar{
+    font-size: 1rem;
+    margin-left: 5%;
+  }
+  #mensajeCarritoVacio{
+    right:7%; 
+    top: 5%
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -704,6 +882,22 @@ align-items: centrar;
   .botonComprar {
     font-size: large;
   }
+  #carritoModal{
+    max-width: 50%;
+    margin: 25%;
+    margin-top: 10%;
+  }
+  #mensajeCarritoVacio{
+    top:30px; 
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+  #mensajeCarritoVacio{
+    top:60px;
+    right: 8% ; 
+  }  
 }
 
 /*-------------Acá arranca la prueba----------*/
@@ -816,7 +1010,17 @@ align-items: centrar;
 }
 /*---------------------Catalogo-------------------------*/
 
+.menu{
+  background-color: #0d3d47;
+}
 
+.formBuscar {
+  margin: 5% 5% 10% 5%;
+  padding: 5%;
+  border-radius: 5px;
+  background-color: #afcfce;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 .formBusqueda{
   display: grid;
@@ -847,11 +1051,38 @@ align-items: centrar;
   background-color: #368979;
  
 }
+
+
 .centrarBuscar{
   margin-top: 5px;
   display:flex;
   justify-content: center;
  }
+#sectionTablaCatalogo{
+  margin:1% 5% 1% 5% ;
+}
+
+.tablaCatalogo p{
+color:whitesmoke;
+}
+
+.tablaCatalogo{
+  margin: 1%;
+  display: grid;
+  grid-template-columns: 1fr 6fr 2fr;
+  grid-row: 3;
+  padding: 1%;
+  border-bottom: dashed #afcfce 1px;
+}
+
+
+.tablaCatalogo p{
+  overflow: hidden;
+}
+
+#mensaje{
+  color: whitesmoke;
+}
 
 /*------------Responsive Catalogo----------------*/
 
@@ -859,8 +1090,8 @@ align-items: centrar;
   
   .formBuscar {
     padding: 10px;
-    margin: 0 5% 15% 5%;
-    padding: 5%;
+    margin: 1% 5% 1% 5%;
+    padding: 1%;
     border-radius: 5px;
     background-color: #afcfce;
     font-family: Arial, Helvetica, sans-serif;
@@ -879,6 +1110,15 @@ align-items: centrar;
   grid-template-columns: repeat(2, 1fr);
  column-gap: 5%;
 }
+#idBotonBuscar{
+  font-size: 12px;
+}
+
+
+.sectionTablaCatalogo p{
+  font-size: 12px;
+}
+
 }
 
 @media screen and (min-width: 1024px){
@@ -886,6 +1126,70 @@ align-items: centrar;
     grid-template-columns: repeat(3, 1fr);
    
   }
+.tablaCatalogo{
+  grid-template-columns: 1fr 5fr 2fr 0fr 4fr 0fr 0fr 4fr;
 }
 
+}
+
+/*---------------Botón hamburguesa-----------------*/
+
+.list-menu{
+  display: flex;
+  list-style-type: none;
+  gap: 6rem;
+}
+.abrir-menu{
+  display: none;
+}
+.cerrar-menu{
+  display: none;
+}
+@media screen and (max-width: 550px){
+   .abrir-menu{
+    display: block;
+   }
+
+   .cerrar-menu{
+    display: block;
+   }
+
+   .menu.visible{
+    opacity: 1;
+    visibility: visible;
+   }
+   .menu{
+    opacity: 0;
+    visibility: hidden;
+   }
+  
+   .menu{
+     padding: 2rem;
+     flex-direction: column;
+     align-items: end;
+     position: absolute;
+     top: 0;
+     right: 0;
+     gap: 4rem;
+     background-color: #0d3d47;
+     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+     /*bottom: 0;*/
+     
+
+   }
+
+   .list-menu{
+     flex-direction: column;
+     align-items: end;
+     gap: 2rem;
+   }   
+  
+}
+
+@media screen and (min-width: 1440px){
+    .list-menu{
+      gap: 12rem;
+    }
+  
+}
 
