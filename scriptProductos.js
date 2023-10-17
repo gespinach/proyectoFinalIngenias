@@ -315,6 +315,7 @@ function activarBotonMenos(botonMenos){
 
   let cant = parseInt(botonMenos.parentElement.children[1].innerText);  
     if(cant>1){
+
     quitarDeCarrito(event.target.name);
   
   
@@ -330,9 +331,7 @@ function activarBotonMenos(botonMenos){
 
 function quitarDeCarrito(codigo){
 
-  let productoElegido = new Producto
-  productoElegido = productos.find((producto) => producto.codigo === codigo)
-  let itemElegido = carrito.find((item)=> item.producto === productoElegido)
+  let itemElegido = carrito.find((item)=> item.producto.codigo ==codigo)
   let i = carrito.indexOf(itemElegido);
   carrito[i].cantidad = carrito[i].cantidad -1;
    
