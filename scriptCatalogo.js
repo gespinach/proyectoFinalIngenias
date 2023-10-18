@@ -15,7 +15,7 @@ class Libro {
 //---------------------Cargar catálogo---------------------------------------------
 
 let numlinea = 0;
-let catalogoCsv = "../datos/catalogo4.csv"
+let catalogoCsv = "https://raw.githubusercontent.com/gespinach/proyectoFinalIngenias/master/datos/catalogo4.csv"
 
 fetch(catalogoCsv)
   .then(respuesta => respuesta.text())
