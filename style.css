@@ -1101,6 +1101,8 @@ color:whitesmoke;
 
 #mensaje{
   color: whitesmoke;
+  margin-bottom: 1%;
+  cursor: pointer;
 }
 
 /*------------Responsive Catalogo----------------*/
