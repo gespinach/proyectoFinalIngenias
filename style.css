@@ -78,9 +78,9 @@ footer{
   left: 50%;
   opacity: 0;
   transform: translate(-50%, -50%) scale(1.25);
-  width: 600px;
-  height: 500px;
-  padding: 20px 30px;
+  width: 80%;
+
+  padding: 2% 3%;
   background: #fff;
   box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
   border-radius: 10px;
@@ -103,12 +103,12 @@ footer{
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   background: #888;
   color: #eee;
   text-align: center;
-  line-height: 20px;
+  line-height: 14px;
   border-radius: 15px;
   cursor: pointer;
 }
@@ -116,17 +116,18 @@ footer{
 .modal h2 {
   text-align: center;
   color: #222;
-  margin: 20px 0px 30px;
-  font-size: 45px;
+  margin: 15px 0px 5px;
+  font-size: medium;
 }
 
 .modal .form-login .contenido-form {
   margin: 15px 0px;
+  
 }
 
 .modal .form-login .contenido-form label{
-  font-size: 30px;
-  padding-top: 15px;
+  font-size: small;
+  padding-top: 5px;
   color: #222;
 }
 
@@ -134,24 +135,29 @@ footer{
 .modal .form-login .contenido-form input[type="password"] {
   margin-top: 10px;
   display: block;
-  width: 95%;
-  padding: 15px;
+  width: 90%;
+  padding: 5%;
   outline: none;
   border: 1px solid #aaa;
   border-radius: 5px;
 }
 
 .modal .form-login .contenido-form .btn-ingresar {
-  width: 100%;
-  height: 60px;
-  margin-top: 30px;
+  width: 50%;
+  height: 5%;
+  margin-top: 15px;
   border: none;
   outline: none;
-  font-size: 30px;
+  font-size: small;
   background: #0d3d47;
   color: #f5f5f5;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.modal .form-login .contenido-form .botonDonar {
+  display: flex;
+  justify-content: center;
 }
 
 .modal .form-login .contenido-form .btn-ingresar:active {
@@ -161,7 +167,7 @@ footer{
 .modal .form-login .contenido-form a {
   display: block;
   margin-left: 5px;
-  font-size: 30px;
+  font-size: small;
   color: #1a79ca;
   text-decoration: none;
 }
@@ -169,8 +175,8 @@ footer{
 .modal .form-login .contenido-form p {
   display: flex;
   text-align: left;
-  margin-top: 30px;
-  font-size: 30px;
+  margin-top: 15px;
+  font-size: small;
 }
 
 /*-------------------------REGISTRO------------------------*/
@@ -209,7 +215,7 @@ footer{
 
 .sec-registro form label {
   width: 100%;
-  font-size: 25px;
+  font-size: 1.3em;
   padding: 0.2em;
   margin-bottom: 0.5em;
 }
@@ -217,7 +223,7 @@ footer{
 .sec-registro form input {
   width: 100%;
   margin-bottom: 1em;
-  padding: 0.8em;
+  padding: 1em;
   border-radius: 9px;
   border: none;
 }
@@ -225,8 +231,9 @@ footer{
 .sec-registro form input[type='submit'] {
   background: #0d3d47;
   margin-top: 10px;
-  font-size: 25px;
+  font-size: 1.3em;
   color: #f5f5f5;
+  padding: 3%;
 }
 
 .sec-registro form input[type='submit']:active {
@@ -235,12 +242,12 @@ footer{
 
 .sec-registro form p {
   margin-top: 5px;
-  font-size: 25px;
+  font-size: 1.3em;
 }
 
 .sec-registro form p a {
   text-decoration: none;
-  font-size: 25px;
+  font-size: 1em;
   color: #003DFF;
 }
 
@@ -1192,4 +1199,53 @@ color:whitesmoke;
     }
   
 }
+/*-------------------Responsive Login-------------------*/
+@media screen and (min-width: 768px){
+  .modal {
+    width: 60%;  
+}
 
+.modal .btn-cerrar  {
+  width: 14px;
+  height: 14px;
+}
+
+.modal h2 {
+  font-size: x-large;
+}
+
+.modal .form-login .contenido-form label{
+  font-size: medium;
+
+}
+
+.modal .form-login .contenido-form input[type="text"],
+.modal .form-login .contenido-form input[type="password"] {
+  width: 94%;
+  padding:3%;
+}
+
+.modal .form-login .contenido-form .btn-ingresar {
+  font-size: medium;
+}
+
+.modal .form-login .contenido-form a {
+  font-size: medium;
+}
+
+.modal .form-login .contenido-form p {
+  font-size: medium;
+}
+}
+
+@media screen and (min-width: 1024px){
+  .modal {
+    width: 40%;  
+}
+}
+
+@media screen and (min-width: 1440px){
+  .modal {
+    width: 30%;  
+}
+}
