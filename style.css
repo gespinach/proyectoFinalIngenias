@@ -1103,6 +1103,7 @@ color:whitesmoke;
   color: whitesmoke;
   margin-bottom: 1%;
   cursor: pointer;
+  display: inline-block;
 }
 
 /*------------Responsive Catalogo----------------*/
