@@ -1,5 +1,6 @@
 
 let catalogo = [];
+let filtrado = [];
 
 class Libro {
     constructor(codigo, titulo, autor, genero, tema) {
@@ -15,7 +16,7 @@ class Libro {
 //---------------------Cargar catálogo---------------------------------------------
 
 let numlinea = 0;
-let catalogoCsv = "../datos/catalogo4.csv"
+let catalogoCsv = "https://raw.githubusercontent.com/gespinach/proyectoFinalIngenias/master/datos/catalogo4.csv"
 
 fetch(catalogoCsv)
   .then(respuesta => respuesta.text())
@@ -55,7 +56,7 @@ fetch(catalogoCsv)
     }else{
     armarFiltro();
     buscar.value = "Nueva búsqueda"
-    document.querySelector("#mensaje").innerText = "";
+   
     }
 
 
@@ -75,6 +76,7 @@ fetch(catalogoCsv)
    document.getElementById("idTema").value=""
 
    buscar.value = "Buscar";
+   document.querySelector("#mensaje").innerText = "";
   }
 
  });
@@ -129,8 +131,9 @@ if (listado.length==0) {
     seccionParaRemover.id = "paraRemover";
     seccionCatalogo.appendChild(seccionParaRemover);
     }else{
-      document.querySelector("#mensaje").innerText = "";
+      document.querySelector("#mensaje").innerText = "Descargar";
      armarListado(listado);
+     filtrado = listado;
     } 
 }
 ;
@@ -184,7 +187,53 @@ seccionCatalogo.appendChild(seccionParaRemover);
 
 }
 
-// }
+//-----------------------------------------------------------------------//
+
+function crearCSVyDescargar(listado) {
+  // Crear datos CSV
+let csvData = "";
+listado.forEach(libro=> {
+csvData = csvData + libro.codigo + ";" + libro.titulo + ";" + libro.genero + ";" + libro.autor + ";" + libro.tema + "\n";
+});
+
+
+  // Crear un objeto Blob con el contenido del CSV y el tipo MIME
+  const blob = new Blob([csvData], { type: "text/csv" });
+
+  // Generar una URL para el objeto Blob
+  const blobURL = window.URL.createObjectURL(blob);
+
+  // Crear un elemento 'a' para la descarga
+  const a = document.createElement("a");
+  a.href = blobURL;
+  a.download = "listadoElLibroFeliz.csv"; // Nombre del archivo CSV
+  a.style.display = "none";
+
+  // Agregar el elemento 'a' al documento
+  document.body.appendChild(a);
+
+  // Simular un clic en el enlace para iniciar la descarga
+  a.click();
+
+  // Eliminar el elemento 'a' después de la descarga
+  document.body.removeChild(a);
+
+  // Liberar la URL del objeto Blob
+  window.URL.revokeObjectURL(blobURL);
+}
+
+// Llamar a la función para crear el archivo CSV y descargarlo
+
+let mensaje = document.getElementById("mensaje");
+mensaje.addEventListener("click", function(){
+  if (mensaje.textContent=="Descargar"){
+  
+    crearCSVyDescargar(filtrado);
+  }
+
+})
+
+
 
 
 
