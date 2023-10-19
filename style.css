@@ -630,6 +630,7 @@ input {
 #btn-form {
   width: 40%;
   margin-top: 2%; 
+  cursor: pointer;
   /* padding: 20px 0 40px 0; */
   font-size: 1.3em;
 }
