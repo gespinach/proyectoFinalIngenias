@@ -633,6 +633,7 @@ input {
   margin-top: 2%; 
   padding: 20px 0 40px 0;
   font-size: 25px boild;
+  cursor: pointer;
 }
 
 .centrarBuscar .input {

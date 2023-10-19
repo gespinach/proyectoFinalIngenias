@@ -41,7 +41,7 @@
     <div class="pDonaciones">
         <p>Acá podes donar o intercambiar tus libros, para ello deberás completar el siguiente formulario:</p>
     </div> 
-    <form class="formBuscar">
+    <form class="formBuscar" id="donar">
       <section class="seccionOpciones">
         <article>
           <div class="radio-donar"><input type="radio" name="opcion" value="donar" />Donar</div>
@@ -52,17 +52,17 @@
       <section class="formBusqueda">
         <article class="contenido-form-donar">
           <label for="titulo">Título:</label>
-          <input type="text" name="titulo" />
+          <input type="text" name="titulo" id="titulo" />
         </article>
 
         <article class="contenido-form-donar">
           <label for="autor">Autor:</label>
-          <input type="text" name="autor" />
+          <input type="text" name="autor" id="autor" />
         </article>
 
         <article class="contenido-form-donar">
           <label for="estado" id="estado">Estado:</label>
-          <select name="estado" class="select">
+          <select name="estado" class="select" id="estado">
             <option value="1">Seleccionar</option>
             <option value="2">Nuevo</option>
             <option value="3">Usado</option>
@@ -71,22 +71,22 @@
 
         <article class="contenido-form-donar">
           <label for="nombre">Nombre:</label>
-          <input type="text" name="nombre" />
+          <input type="text" name="nombre" id="nombre" />
         </article>
 
         <article class="contenido-form-donar">
           <label for="apellido">Apellido:</label>
-          <input type="text" name="apellido" />
+          <input type="text" name="apellido" id="apellido" />
         </article>
 
         <article class="contenido-form-donar">
           <label for="telefono">Teléfono:</label>
-          <input type="text" name="telefono" />
+          <input type="text" name="telefono" id="telefono" />
         </article>
       </section>
         
       <div class="centrarBuscar">
-        <input class="botonBuscar" id="btn-form" type="button" value="ACEPTAR"/>
+        <input class="botonBuscar" id="btn-form" type="submit" value="ACEPTAR"/>
       </div>
     </form>
   
@@ -113,5 +113,6 @@
     </footer>
     <script src="../script.js"></script>
     <script src="../scriptIndex.js"></script>
+    <script src="../donacion.js"></script>
   </body>
 </html>
