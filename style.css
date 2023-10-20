@@ -1221,6 +1221,10 @@ color:whitesmoke;
     width: 60%;  
 }
 
+.sec-registro{
+  display: grid;
+}
+
 .modal .btn-cerrar  {
   width: 14px;
   height: 14px;
